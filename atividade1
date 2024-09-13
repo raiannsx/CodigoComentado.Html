@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+<title>Meu Portofilio</title> <!-- Define o título da página exibido na aba do navegador -->
+    <style>
+        /* Estilo geral do corpo da página */
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte usada na página */
+            line-height: 1.6; /* Ajusta a altura da linha para melhorar a legibilidade */
+            margin: 0; /* Remove a margem padrão do navegador */
+            padding: 0; /* Remove o preenchimento padrão do navegador */
+            background-color: #f4f4f4; /* Define a cor de fundo da página */
+        }
+        
+        /* Estilo para o cabeçalho */
+        header {
+            background: #333; /* Cor de fundo escura */
+            color: #fff; /* Cor do texto (branca) */
+            padding: 10px 0; /* Espaçamento interno do cabeçalho */
+            text-align: center; /* Alinha o texto no centro */
+        }
+        
+        /* Estilo para as seções de projetos, habilidades e contato */
+        .projects, .skills, .contact {
+            margin-bottom: 20px; /* Adiciona espaço abaixo das seções */
+        }
+        
+        /* Estilo para o botão de envio do formulário */
+        input[type="submit"] {
+            background-color: #4CAF50; /* Cor de fundo do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Remove a borda padrão do botão */
+            padding: 10px 20px; /* Espaçamento interno do botão */
+            cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
+            font-size: 16px; /* Define o tamanho da fonte do botão */
+        }
+        
+        /* Sobrescreve a cor de fundo do botão de envio */
+        input[type="submit"] {
+            background-color: #45a049; /* Cor de fundo do botão ao passar o mouse */
+        }
+        
+        /* Estilo para os itens de projeto */
+        .projeto {
+            display: inline-block; /* Exibe os itens lado a lado */
+            margin-right: 10px; /* Espaço entre os itens de projeto */
+            padding: 10px; /* Espaçamento interno dos itens */
+            border: 1px solid #000; /* Borda ao redor dos itens (opcional) */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Projetos Recentes</h1> <!-- Título principal da seção de projetos -->
+
+<!-- Divisões para cada projeto com estilo aplicado -->
+<div class="projeto">Projeto 1</div>
+<div class="projeto">Projeto 2</div>
+<div class="projeto">Projeto 3</div>
+
+<section class="skills"> <!-- Seção para habilidades -->
+    <h2>Habilidades</h2> <!-- Subtítulo da seção de habilidades -->
+    <ul> <!-- Lista não ordenada de habilidades -->
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>React</li>
+    </ul>
+</section>
+
+<section class="contact"> <!-- Seção de contato -->
+    <h2> Entre em contato</h2> <!-- Subtítulo da seção de contato -->
+    <form action="/enviar-mensagem" method="post"> <!-- Formulário para enviar mensagem -->
+        <label for="nome">Seu Nome:</label> <!-- Rótulo para o campo de nome -->
+        <input type="text" id="nome" name="nome" required> <!-- Campo de entrada para o nome -->
+        
+        <label for="email">Seu E-mail:</label> <!-- Rótulo para o campo de e-mail -->
+        <input type="email" id="email" name="email" required> <!-- Campo de entrada para o e-mail -->
+        
+        <label for="mensagem">Sua Mensagem:</label> <!-- Rótulo para o campo de mensagem -->
+        <textarea id="mensagem" name="mensagem" required></textarea> <!-- Campo de entrada para a mensagem -->
+        
+        <input type="submit" value="Enviar Mensagem"> <!-- Botão de envio do formulário -->
+    </form>
+</section>
+
+</body>
+</html>
