@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define o conjunto de caracteres e a responsividade da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Alunos</title>
+    <style>
+        /* Estilo do corpo da página */
+        body {
+            font-family: 'Arial', sans-serif; /* Fonte padrão */
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Altura total da janela */
+            display: flex; /* Flexbox para centralizar conteúdo */
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(190deg, #a00028, #8300cffa, #c03600); /* Gradiente de fundo */
+            background-size: 600% 600%; /* Tamanho do gradiente */
+            animation: gradientAnimation 8s ease infinite; /* Animação do gradiente */
+        }
+
+        /* Animação para o gradiente de fundo */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Estilo do container principal */
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 20px; /* Espaçamento interno */
+            max-width: 600px; /* Largura máxima */
+            width: 100%; /* Largura total do container */
+        }
+
+        /* Estilo do título principal */
+        h1 {
+            text-align: center; /* Centraliza o texto */
+            margin-bottom: 20px; /* Espaçamento inferior */
+            color: #333; /* Cor do texto */
+        }
+
+        /* Menu de navegação */
+        .menu {
+            display: flex; /* Flexbox para distribuir os links */
+            justify-content: space-around; /* Espaçamento igual entre os itens */
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
+
+        /* Estilo dos links do menu */
+        .menu a {
+            background-color: #ff0000; /* Cor de fundo dos links */
+            color: white; /* Cor do texto */
+            text-decoration: none; /* Remove o sublinhado */
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+        }
+
+        /* Efeito ao passar o mouse sobre os links do menu */
+        .menu a:hover {
+            background-color: #b30000; /* Cor alterada ao passar o mouse */
+        }
+
+        /* Estilo do container do formulário */
+        .form-container {
+            margin-bottom: 30px; /* Espaçamento inferior */
+        }
+
+        /* Estilo do subtítulo dos formulários */
+        .form-container h2 {
+            margin-bottom: 15px; /* Espaçamento inferior */
+            color: #ff0000; /* Cor do texto */
+        }
+
+        /* Estilo dos rótulos (labels) dos campos */
+        label {
+            display: block; /* Faz com que os rótulos ocupem toda a largura */
+            margin-bottom: 5px; /* Espaçamento inferior */
+            color: #333; /* Cor do texto */
+        }
+
+        /* Estilo dos campos de texto */
+        input[type="text"] {
+            width: 100%; /* Largura total */
+            padding: 10px; /* Espaçamento interno */
+            margin-bottom: 10px; /* Espaçamento inferior */
+            border: 1px solid #ccc; /* Borda cinza */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+
+        /* Estilo do botão de envio */
+        button[type="submit"] {
+            background-color: #282aa7; /* Cor de fundo do botão */
+            color: white; /* Cor do texto */
+            border: none; /* Remove a borda padrão */
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Muda o cursor para pointer */
+            transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+        }
+
+        /* Efeito ao passar o mouse sobre o botão de envio */
+        button[type="submit"]:hover {
+            background-color: #218838; /* Cor alterada ao passar o mouse */
+        }
+
+        /* Estilo da tabela */
+        table {
+            width: 100%; /* Largura total da tabela */
+            border-collapse: collapse; /* Colapsa as bordas */
+            margin-top: 15px; /* Espaçamento superior */
+        }
+
+        /* Estilo das bordas da tabela e células */
+        table, th, td {
+            border: 1px solid #ccc; /* Borda cinza */
+        }
+
+        /* Estilo das células da tabela */
+        th, td {
+            padding: 10px; /* Espaçamento interno */
+            text-align: left; /* Alinhamento do texto à esquerda */
+        }
+
+        /* Estilo dos cabeçalhos da tabela */
+        th {
+            background-color: #007BFF; /* Cor de fundo dos cabeçalhos */
+            color: white; /* Cor do texto dos cabeçalhos */
+        }
+
+        /* Estilo das células de dados */
+        td {
+            background-color: #f9f9f9; /* Cor de fundo das células de dados */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Alunos</h1>
+        <!-- Menu de navegação -->
+        <nav class="menu">
+            <a href="#cadastro">Cadastro</a>
+            <a href="#listagem">Listagem</a>
+            <a href="#busca">Busca</a>
+        </nav>
+
+        <!-- Cadastro de Aluno -->
+        <div id="cadastro" class="form-container">
+            <h2>Cadastro de Aluno</h2>
+            <form action="cadastro.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="escolaridade">Escolaridade:</label>
+                <input type="text" id="escolaridade" name="escolaridade" required>
+
+                <label for="serie">Série:</label>
+                <input type="text" id="serie" name="serie" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- Listagem de Alunos -->
+        <div id="listagem" class="form-container">
+            <h2>Listagem de Alunos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Escolaridade</th>
+                        <th>Série</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Busca de Aluno -->
+        <div id="busca" class="form-container">
+            <h2>Busca de Aluno</h2>
+            <form>
+                <label for="buscaNome">Nome:</label>
+                <input type="text" id="buscaNome" name="buscaNome">
+
+                <button type="submit">Buscar</button>
+            </form>
+            <div class="resultado-busca">
+                <!-- Resultado da busca será exibido aqui -->
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
