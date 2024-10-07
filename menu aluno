@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Alunos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(190deg, #a00028,#8300cffa, #c03600);
+            background-size: 600% 600%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+
+        .menu a {
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .menu a:hover {
+            background-color: #b30000;
+        }
+
+
+        .form-container {
+            margin-bottom: 30px;
+        }
+
+
+        .form-container h2 {
+            margin-bottom: 15px;
+            color: #ff0000;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+        button[type="submit"] {
+            background-color: #282aa7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+
+        td {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Alunos</h1>
+        <nav class="menu">
+            <a href="#cadastro">Cadastro</a>
+            <a href="#listagem">Listagem</a>
+            <a href="#busca">Busca</a>
+        </nav>
+
+
+        <!-- Cadastro de Aluno -->
+        <div id="cadastro" class="form-container">
+            <h2>Cadastro de Aluno</h2>
+            <form action="cadastro.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+
+                <label for="escolaridade">Escolaridade:</label>
+                <input type="text" id="escolaridade" name="escolaridade" required>
+
+
+                <label for="serie">Série:</label>
+                <input type="text" id="serie" name="serie" required>
+
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+
+        <!-- Listagem de Alunos -->
+        <div id="listagem" class="form-container">
+            <h2>Listagem de Alunos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Escolaridade</th>
+                        <th>Série</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Busca de Aluno -->
+        <div id="busca" class="form-container">
+            <h2>Busca de Aluno</h2>
+            <form>
+                <label for="buscaNome">Nome:</label>
+                <input type="text" id="buscaNome" name="buscaNome">
+
+
+                <button type="submit">Buscar</button>
+            </form>
+            <div class="resultado-busca">
+                <!-- Resultado da busca será exibido aqui -->
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
